@@ -1,0 +1,11 @@
+<?php
+  session_start();
+  include('configs/conf.php');
+  include('includes/head.php');
+  include("functions/loadSession.php");
+  include('includes/nav.php');
+  include('includes/leftside.php');
+  include('includes/body.php');
+  include('includes/rightside.php');
+  include('includes/footer.php');
+?>

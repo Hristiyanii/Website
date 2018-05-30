@@ -1,0 +1,38 @@
+<div class="col-md-6">
+  <div class="card">
+    <?php
+      if(isset($_SESSION['username'])) {
+        echo "<div class='card-header'>Account Information - ".$_SESSION['username']."</div>";
+        echo "<div class='card-body'>";
+        echo "<table class='table left-panel-table'>";
+        echo "<tr>";
+        echo "<td>Account Name</td>";
+        echo "<td>Account Email</td>";
+        echo "<td>Account Rank</td>";
+        echo "</tr>";
+        echo "<tr>";
+        echo "<td><strong>".$_SESSION['username']."</strong></td>";
+        echo "<td><strong>".$_SESSION['accEmail']."</strong></td>";
+        echo "<td><strong>".$_SESSION['gmRank']."</strong></td>";
+        echo "</tr>";
+        echo "<td>Last Login</td>";
+        echo "<td>Last IP</td>";
+        echo "<td>GM Level</td>";
+        echo "</tr>";
+        echo "<tr>";
+        echo "<td><strong>".$_SESSION['accLastLogin']."</strong></td>";
+        echo "<td><strong>".$_SESSION['accLastIP']."</strong></td>";
+        echo "<td><strong>".$_SESSION['gmLevel']."</strong></td>";
+        echo "</tr>";
+        echo "</table>";
+        echo "<form action='functions/logout.php' method='POST' autocomplete='off'>";
+        echo "<input type='submit' value='Logout' class='btn btn-primary'>";
+        echo "</form>";
+        echo "</div>";
+      }else {
+        echo "<div class='card-body'><div class='alert alert-danger'><strong>Warning!</strong> You are not logged in.</div></div>";
+        header("refresh:2; /login");
+      }
+    ?>
+  </div>
+</div>
